@@ -1,0 +1,1 @@
+# No third-party packages required - the scanner uses only the Python standard library (Python 3.8+).

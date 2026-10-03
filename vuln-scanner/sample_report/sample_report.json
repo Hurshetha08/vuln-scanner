@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "target": "http://127.0.0.1:8081",
+    "ip": "127.0.0.1",
+    "started": "2026-10-03 09:37:48",
+    "ports_scanned": 32,
+    "open_ports": 1,
+    "tool_version": "1.0.0"
+  },
+  "summary": {
+    "counts": {
+      "Critical": 1,
+      "High": 2,
+      "Medium": 4,
+      "Low": 5,
+      "Info": 2
+    },
+    "risk_score": 45,
+    "overall_rating": "Critical"
+  },
+  "findings": [
+    {
+      "severity": "Critical",
+      "category": "Exposed Resource",
+      "title": "Exposed .env file (/.env)",
+      "detail": "http://127.0.0.1:8081/.env returned content that matches a sensitive file.",
+      "recommendation": "Remove the file or block access in the web server config.",
+      "port": 8081
+    },
+    {
+      "severity": "High",
+      "category": "Outdated Software",
+      "title": "Outdated Apache HTTP Server 2.2.8",
+      "detail": "Detected via service banner. Scanner baseline is 2.4.58; older releases may contain known vulnerabilities.",
+      "recommendation": "Upgrade Apache HTTP Server to the latest stable release and review its CVEs (https://nvd.nist.gov).",
+      "port": 8081
+    },
+    {
+      "severity": "High",
+      "category": "Outdated Software",
+      "title": "Outdated PHP 5.2.4",
+      "detail": "Detected via service banner. Scanner baseline is 8.2.0; older releases may contain known vulnerabilities.",
+      "recommendation": "Upgrade PHP to the latest stable release and review its CVEs (https://nvd.nist.gov).",
+      "port": 8081
+    },
+    {
+      "severity": "Medium",
+      "category": "Missing Security Header",
+      "title": "Missing Content-Security-Policy header",
+      "detail": "http://127.0.0.1:8081 does not send Content-Security-Policy. Helps prevent XSS and data injection attacks.",
+      "recommendation": "Add the Content-Security-Policy response header.",
+      "port": 8081
+    },
+    {
+      "severity": "Medium",
+      "category": "Missing Security Header",
+      "title": "Missing X-Frame-Options header",
+      "detail": "http://127.0.0.1:8081 does not send X-Frame-Options. Protects against clickjacking (or use CSP frame-ancestors).",
+      "recommendation": "Add the X-Frame-Options response header.",
+      "port": 8081
+    },
+    {
+      "severity": "Medium",
+      "category": "Insecure Cookie",
+      "title": "Cookie 'sessionid' missing HttpOnly, SameSite",
+      "detail": "Set-Cookie from http://127.0.0.1:8081 lacks recommended attributes.",
+      "recommendation": "Set HttpOnly, Secure (HTTPS) and SameSite on session cookies.",
+      "port": 8081
+    },
+    {
+      "severity": "Medium",
+      "category": "Weak Configuration",
+      "title": "Site served over unencrypted HTTP only",
+      "detail": "http://127.0.0.1:8081 has no HTTPS counterpart on port 443.",
+      "recommendation": "Enable HTTPS with a valid certificate.",
+      "port": 8081
+    },
+    {
+      "severity": "Low",
+      "category": "Information Disclosure",
+      "title": "Software version disclosed: Apache HTTP Server 2.2.8",
+      "detail": "The version string is visible in the service banner.",
+      "recommendation": "Hide version details (e.g. ServerTokens Prod, server_tokens off).",
+      "port": 8081
+    },
+    {
+      "severity": "Low",
+      "category": "Information Disclosure",
+      "title": "Software version disclosed: PHP 5.2.4",
+      "detail": "The version string is visible in the service banner.",
+      "recommendation": "Hide version details (e.g. ServerTokens Prod, server_tokens off).",
+      "port": 8081
+    },
+    {
+      "severity": "Low",
+      "category": "Missing Security Header",
+      "title": "Missing X-Content-Type-Options header",
+      "detail": "http://127.0.0.1:8081 does not send X-Content-Type-Options. Prevents MIME-type sniffing ('nosniff').",
+      "recommendation": "Add the X-Content-Type-Options response header.",
+      "port": 8081
+    },
+    {
+      "severity": "Low",
+      "category": "Missing Security Header",
+      "title": "Missing Referrer-Policy header",
+      "detail": "http://127.0.0.1:8081 does not send Referrer-Policy. Controls how much referrer data is leaked.",
+      "recommendation": "Add the Referrer-Policy response header.",
+      "port": 8081
+    },
+    {
+      "severity": "Low",
+      "category": "Missing Security Header",
+      "title": "Missing Permissions-Policy header",
+      "detail": "http://127.0.0.1:8081 does not send Permissions-Policy. Restricts access to powerful browser features.",
+      "recommendation": "Add the Permissions-Policy response header.",
+      "port": 8081
+    },
+    {
+      "severity": "Info",
+      "category": "Open Port",
+      "title": "Port 8081/tcp open (unknown)",
+      "detail": "Banner: HTTP/1.0 501 Unsupported method ('HEAD')",
+      "recommendation": "Close the port if the service is not required.",
+      "port": 8081
+    },
+    {
+      "severity": "Info",
+      "category": "Web",
+      "title": "Web service reachable at http://127.0.0.1:8081 (HTTP 200)",
+      "detail": "Server header: Apache/2.2.8 (Ubuntu) PHP/5.2.4",
+      "recommendation": "-",
+      "port": 8081
+    }
+  ]
+}
