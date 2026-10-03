@@ -30,7 +30,7 @@ vuln-scanner/
 Requires **Python 3.8+**. No installation needed.
 
 ```bash
-git clone https://github.com/<your-username>/vuln-scanner.git
+git clone https://github.com/Hurshetha08/vuln-scanner.git
 cd vuln-scanner
 
 # 1) Try it safely on the bundled demo target
